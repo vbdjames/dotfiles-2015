@@ -8,7 +8,7 @@
 
 dir=~/dotfiles
 olddir=~/dotfiles_old
-files="vim vimrc zshrc"   # list of files/folders to symlink in homedir
+files="vim vimrc zshrc slate"   # list of files/folders to symlink in homedir
 
 # create dorfiles_old in homedir
 echo -n "Creating $olddir for backup of any existing dotfiles in ~ ..."
