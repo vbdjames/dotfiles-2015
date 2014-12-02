@@ -37,6 +37,7 @@ layout 3monitors 'Google Chrome':REPEAT      ${2-full}
 layout 3monitors 'Cornerstone':REPEAT        ${2-full}
 layout 3monitors 'Adium':REPEAT              move screenOriginX+screenSizeX*5/6;screenOriginY screenSizeX/6;screenSizeY ${mon-laptop}
 layout 3monitors 'Microsoft Lync':REPEAT     move screenOriginX+screenSizeX*3/6;screenOriginY screenSizeX*2/6;screenSizeY ${mon-laptop}
+layout 3monitors 'HipChat':REPEAT            move screenOriginX;screenOriginY screenSizeX*5/6;screenSizeY ${mon-laptop}
 layout 3monitors 'Microsoft Outlook'         ${full} ${mon-laptop}
 layout 3monitors 'Mail'                      ${full} ${mon-laptop}
 layout 3monitors 'Safari'                    ${full} ${mon-laptop}
