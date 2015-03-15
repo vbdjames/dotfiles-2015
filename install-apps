@@ -1,0 +1,11 @@
+#!/bin/sh
+
+cask_install 1password
+cask_install alfred
+cask_install dropbox
+cask_install google-chrome
+cask_install kindle
+cask_install nvalt
+cask_install send-to-kindle
+cask_install slate
+cask_install spotify

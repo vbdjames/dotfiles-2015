@@ -1,0 +1,23 @@
+brew_install_or_upgrade git
+
+brew_install_or_upgrade the_silver_searcher
+
+brew_install_or_upgrade node
+
+brew_install_or_upgrade autojump
+append_to_zshrc '[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh'
+
+brew_install_or_upgrade ack
+
+cask_install virtualbox
+
+cask_install vagrant
+
+cask_install vagrant-manager
+
+cask_install iterm2
+
+brew_install_or_upgrade macvim --override-system-vim
+vim +PluginInstall +qall
+
+npm -g install spot
