@@ -94,6 +94,17 @@ trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
 
 set -e
 
+echo "Would you like to set your computer name (as done via System Preferences >> Sharing)?  (y/n)"
+read -r response
+if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+  echo "What would you like it to be?"
+  read COMPUTER_NAME
+  sudo scutil --set ComputerName $COMPUTER_NAME
+  sudo scutil --set HostName $COMPUTER_NAME
+  sudo scutil --set LocalHostName $COMPUTER_NAME
+  sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $COMPUTER_NAME
+fi
+
 if [ -d "$HOME/.dotfiles/" ]; then
   git -C $HOME/.dotfiles pull 
 else
@@ -141,11 +152,12 @@ brew_tap 'caskroom/cask'
 brew_install_or_upgrade 'brew-cask'
 export HOMEBREW_CASK_OPTS="--appdir=/Applications" 
 
-. "./install-dev-tools"
-. "./install-ruby"
-. "./install-scheme"
-. "./install-apps"
-. "./install-prefs"
+source "./install-dev-tools"
+source "./install-ruby"
+source "./install-scheme"
+source "./install-python"
+source "./install-apps"
+source "./install-prefs"
 
 brew linkapps
 
@@ -153,5 +165,6 @@ if ! command -v rcup >/dev/null; then
   brew_tap 'thoughtbot/formulae'
   brew_install_or_upgrade 'rcm'
 fi
+rcup -x "README.md scripts"
 
-rcup
+wall <post-install-msg

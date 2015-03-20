@@ -1,0 +1,25 @@
+********************************************************************************
+
+Automated install is complete. There are a few steps that need to be completed
+manually.
+
+ 1) Launch dropbox and login - get the sync started
+ 2) Change the launch key for Alfred to CTRL-SPACE
+ 3) Setup gmail and fastmail in Mail.app
+ 4) System Preferences -> Security & Privacy -> Privacy, enable Slate & Karabiner
+ 5) Set Slate to launch on login
+ 6) Set Karabiner to launch on login
+ 7) Once dropbox is synced, launch 1Password & set up sync to dropbox
+ 8) Launch Chrome, login, and let it link to 1Password
+ 9) Launch Safari and let it link to 1Password
+10) Launch nvALT and start sycing to Simplenote
+11) Login to spotify
+
+* Alfred powerpack
+* install app store apps
+* set up hyper key mappings as they occur to me with keyboard maestro
+* enable install of apps from anywhere
+* set computer name
+* setup favorites in finder
+    + Home
+    - All My Files

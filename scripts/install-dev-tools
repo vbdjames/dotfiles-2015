@@ -21,3 +21,6 @@ brew_install_or_upgrade macvim --override-system-vim
 vim +PluginInstall +qall
 
 npm -g install spot
+
+brew_install_or_upgrade mongodb
+ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
