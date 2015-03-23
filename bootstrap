@@ -1,0 +1,68 @@
+#!/bin/sh
+
+# ask for the administrator password upfront
+sudo -v
+
+# keep-alive: update existing `sudo` time stamp until `.osx` has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+source "./scripts/utils"
+
+# exit immediately on error
+trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
+set -e
+
+# set the computer name
+echo "Would you like to set your computer name (as done via System Preferences >> Sharing)?  (y/n)"
+read -r response
+if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+  echo "What would you like it to be?"
+  read COMPUTER_NAME
+  sudo scutil --set ComputerName $COMPUTER_NAME
+  sudo scutil --set HostName $COMPUTER_NAME
+  sudo scutil --set LocalHostName $COMPUTER_NAME
+  sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $COMPUTER_NAME
+fi
+
+# update (or clone) my dotfiles
+if [ -d "$HOME/.dotfiles/" ]; then
+  git -C $HOME/.dotfiles pull 
+else
+  git clone https://github.com/vbdjames/dotfiles.git ~/.dotfiles
+fi
+
+if [ ! -d "$HOME/.bin/" ]; then
+  mkdir "$HOME/.bin"
+fi
+append_to_zshrc 'export PATH="$HOME/.bin:$PATH"'
+
+# pull down (or update) antigen
+if [ -d "$HOME/.antigen/" ]; then
+    git -C $HOME/.antigen pull
+else
+    git clone https://github.com/zsh-users/antigen.git ~/.antigen
+fi
+
+case "$SHELL" in
+  */zsh) : ;;
+  *)
+    fancy_echo "Changing your shell to zsh ..."
+      chsh -s "$(which zsh)"
+    ;;
+esac
+
+source "./scripts/homebrew"
+source "./scripts/dev-tools"
+source "./scripts/ruby"
+source "./scripts/python"
+source "./scripts/node"
+source "./scripts/scheme"
+source "./scripts/apps"
+source "./scripts/osx"
+
+brew linkapps
+
+/bin/zsh -c "source ~/.zshrc && antigen update"
+
+cat ./scripts/post-install-msg
+

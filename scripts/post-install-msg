@@ -15,11 +15,11 @@ manually.
 10) Launch nvALT and start sycing to Simplenote
 11) Login to spotify
 
-* Alfred powerpack
+* install alfred powerpack
 * install app store apps
-* set up hyper key mappings as they occur to me with keyboard maestro
-* enable install of apps from anywhere
-* set computer name
 * setup favorites in finder
     + Home
     - All My Files
+* install ssh keys & known hosts from thumb drive
+* set up hyper key mappings as they occur to me with keyboard maestro
+

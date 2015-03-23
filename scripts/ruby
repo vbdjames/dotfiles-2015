@@ -1,5 +1,3 @@
-#!/bin/sh
-
 gem_install_or_update() {
   if gem list "$1" --installed > /dev/null; then
     fancy_echo "Updating %s ..." "$1"

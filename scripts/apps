@@ -1,5 +1,3 @@
-#!/bin/sh
-
 cask_install 1password
 cask_install alfred
 cask_install dropbox

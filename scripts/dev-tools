@@ -2,12 +2,11 @@ brew_install_or_upgrade git
 
 brew_install_or_upgrade the_silver_searcher
 
-brew_install_or_upgrade node
-
 brew_install_or_upgrade autojump
-append_to_zshrc '[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh'
 
 brew_install_or_upgrade ack
+
+brew_install_or_upgrade tmux
 
 cask_install virtualbox
 
@@ -20,7 +19,13 @@ cask_install iterm2
 brew_install_or_upgrade macvim --override-system-vim
 vim +PluginInstall +qall
 
-npm -g install spot
+curl -L https://raw.github.com/guille/spot/master/spot.sh -o ~/.bin/spot && chmod +x ~/.bin/spot
 
 brew_install_or_upgrade mongodb
 ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
+
+if ! command -v rcup >/dev/null; then
+  brew_tap 'thoughtbot/formulae'
+  brew_install_or_upgrade 'rcm'
+fi
+rcup -x "README.md scripts bootstrap"
