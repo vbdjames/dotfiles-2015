@@ -18,6 +18,10 @@ cask_install iterm2
 
 cask_install font-inconsolata
 
+cask_install font-source-code-pro
+
+cask_install font-consolas
+
 brew_install_or_upgrade macvim --override-system-vim
 vim +PluginInstall +qall
 

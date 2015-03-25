@@ -31,6 +31,7 @@ set shiftwidth=4
 set softtabstop=4
 set relativenumber
 set number
+set guifont=Source\ Code\ Pro:h15
 
 colorscheme solarized
 set background=dark

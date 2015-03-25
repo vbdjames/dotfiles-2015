@@ -57,8 +57,8 @@ do
 
         $plb -c "Set :New\ Bookmarks:$idx:Use\ Bold\ Font 0" $dest
         $plb -c "Set :New\ Bookmarks:$idx:Use\ Bright\ Bold 0" $dest
-        $plb -c "Set :New\ Bookmarks:$idx:Normal\ Font Inconsolata\ 15" $dest
-        $plb -c "Set :New\ Bookmarks:$idx:Non\ Ascii\ Font Inconsolata\ 15" $dest
+        $plb -c "Set :New\ Bookmarks:$idx:Normal\ Font SourceCodePro-Regular\ 15" $dest
+        $plb -c "Set :New\ Bookmarks:$idx:Non\ Ascii\ Font SourceCodePro-Regular\ 15" $dest
     fi
 done
 
