@@ -1,4 +1,6 @@
 #!/bin/sh
+SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+echo $SCRIPTPATH
 
 # ask for the administrator password upfront
 sudo -v
@@ -6,7 +8,7 @@ sudo -v
 # keep-alive: update existing `sudo` time stamp until `.osx` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-source "./scripts/utils"
+source "$SCRIPTPATH/scripts/utils"
 
 # exit immediately on error
 trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
@@ -51,20 +53,20 @@ case "$SHELL" in
     ;;
 esac
 
-source "./scripts/homebrew"
-source "./scripts/dev-tools"
-source "./scripts/ruby"
-source "./scripts/python"
-source "./scripts/node"
-source "./scripts/scheme"
-source "./scripts/apps"
-source "./scripts/osx"
-source "./scripts/iterm"
-source "./scripts/iterm" # for some reason this has to run twice to go into effect - wtf?
+source "$SCRIPTPATH/scripts/homebrew"
+source "$SCRIPTPATH/scripts/dev-tools"
+source "$SCRIPTPATH/scripts/ruby"
+source "$SCRIPTPATH/scripts/python"
+source "$SCRIPTPATH/scripts/node"
+source "$SCRIPTPATH/scripts/scheme"
+source "$SCRIPTPATH/scripts/apps"
+source "$SCRIPTPATH/scripts/osx"
+source "$SCRIPTPATH/scripts/iterm"
+source "$SCRIPTPATH/scripts/iterm" # for some reason this has to run twice to go into effect - wtf?
 
 brew linkapps
 
 /bin/zsh -c "source ~/.zshrc && antigen update"
 
-cat ./scripts/post-install-msg
+cat $SCRIPTPATH/scripts/post-install-msg
 

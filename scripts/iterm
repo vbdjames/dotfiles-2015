@@ -9,15 +9,15 @@ fi
 $plb -c "Set PromptOnQuit 0" $dest
 
 if [[ $($plb -c "Print Custom\ Color\ Presets:Solarized\ Light" $dest 2>/dev/null) == '' ]]; then
-    $plb -c "Merge iterm-colors/solarized-light.plist  Custom\ Color\ Presets" $dest
+    $plb -c "Merge $SCRIPTPATH/iterm-colors/solarized-light.plist  Custom\ Color\ Presets" $dest
 fi
 
 if [[ $($plb -c "Print Custom\ Color\ Presets:Solarized\ Dark" $dest 2>/dev/null) == '' ]]; then
-    $plb -c "Merge iterm-colors/solarized-dark.plist  Custom\ Color\ Presets" $dest
+    $plb -c "Merge $SCRIPTPATH/iterm-colors/solarized-dark.plist  Custom\ Color\ Presets" $dest
 fi
 
 if [[ $($plb -c "Print Custom\ Color\ Presets:IR\ Black" $dest 2>/dev/null) == '' ]]; then
-    $plb -c "Merge iterm-colors/ir-black.plist  Custom\ Color\ Presets" $dest
+    $plb -c "Merge $SCRIPTPATH/iterm-colors/ir-black.plist  Custom\ Color\ Presets" $dest
 fi
 
 default_guid=$(defaults read com.googlecode.iterm2 "Default Bookmark Guid")
