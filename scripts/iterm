@@ -1,0 +1,64 @@
+#!/bin/sh
+
+dest=~/Library/Preferences/com.googlecode.iterm2.plist
+plb=/usr/libexec/PlistBuddy
+
+if [[ $(ps aux | grep "[i]Term.app") ]]; then
+    echo "Please quit iTerm before running this script"
+    break
+fi
+
+$plb -c "Set PromptOnQuit 0" $dest
+
+if [[ $($plb -c "Print Custom\ Color\ Presets:Solarized\ Light" $dest 2>/dev/null) == '' ]]; then
+    $plb -c "Merge iterm-colors/solarized-light.plist  Custom\ Color\ Presets" $dest
+fi
+
+if [[ $($plb -c "Print Custom\ Color\ Presets:Solarized\ Dark" $dest 2>/dev/null) == '' ]]; then
+    $plb -c "Merge iterm-colors/solarized-dark.plist  Custom\ Color\ Presets" $dest
+fi
+
+if [[ $($plb -c "Print Custom\ Color\ Presets:IR\ Black" $dest 2>/dev/null) == '' ]]; then
+    $plb -c "Merge iterm-colors/ir-black.plist  Custom\ Color\ Presets" $dest
+fi
+
+default_guid=$(defaults read com.googlecode.iterm2 "Default Bookmark Guid")
+bookmark_count=$(defaults read com.googlecode.iterm2 "New Bookmarks" | grep "Guid" | wc -l)
+
+for ((idx=0; idx < $bookmark_count; idx++)) 
+do
+    this_guid=$($plb -c "Print New\ Bookmarks:$idx:Guid" $dest)
+    if [[ $this_guid == $default_guid ]]; then
+        # set all the colors from Solarized Dark
+        for ac in $(seq 0 15) 
+        do
+            $plb -c "Delete :New\ Bookmarks:$idx:Ansi\ $ac\ Color" $dest
+            $plb -c "Copy :Custom\ Color\ Presets:Solarized\ Dark:Ansi\ $ac\ Color :New\ Bookmarks:$idx:Ansi\ $ac\ Color" $dest
+        done
+
+        # this has to be run twice to show up in the app
+        # the defaults are changed the first time, and no number of app launches will work
+        # not sure what that second run is accomplishing that the first is not
+        $plb -c "Delete :New\ Bookmarks:$idx:Background\ Color" $dest
+        $plb -c "Copy :Custom\ Color\ Presets:Solarized\ Dark:Background\ Color :New\ Bookmarks:$idx:Background\ Color" $dest
+        $plb -c "Delete :New\ Bookmarks:$idx:Bold\ Color" $dest
+        $plb -c "Copy :Custom\ Color\ Presets:Solarized\ Dark:Bold\ Color :New\ Bookmarks:$idx:Bold\ Color" $dest
+        $plb -c "Delete :New\ Bookmarks:$idx:Cursor\ Color" $dest
+        $plb -c "Copy :Custom\ Color\ Presets:Solarized\ Dark:Cursor\ Color :New\ Bookmarks:$idx:Cursor\ Color" $dest
+        $plb -c "Delete :New\ Bookmarks:$idx:Cursor\ Text\ Color" $dest
+        $plb -c "Copy :Custom\ Color\ Presets:Solarized\ Dark:Cursor\ Text\ Color :New\ Bookmarks:$idx:Cursor\ Text\ Color" $dest
+        $plb -c "Delete :New\ Bookmarks:$idx:Foreground\ Color" $dest
+        $plb -c "Copy :Custom\ Color\ Presets:Solarized\ Dark:Foreground\ Color :New\ Bookmarks:$idx:Foreground\ Color" $dest
+        $plb -c "Delete :New\ Bookmarks:$idx:Selected\ Text\ Color" $dest
+        $plb -c "Copy :Custom\ Color\ Presets:Solarized\ Dark:Selected\ Text\ Color :New\ Bookmarks:$idx:Selected\ Text\ Color" $dest
+        $plb -c "Delete :New\ Bookmarks:$idx:Selection\ Color" $dest
+        $plb -c "Copy :Custom\ Color\ Presets:Solarized\ Dark:Selection\ Color :New\ Bookmarks:$idx:Selection\ Color" $dest
+
+
+        $plb -c "Set :New\ Bookmarks:$idx:Use\ Bold\ Font 0" $dest
+        $plb -c "Set :New\ Bookmarks:$idx:Use\ Bright\ Bold 0" $dest
+        $plb -c "Set :New\ Bookmarks:$idx:Normal\ Font Inconsolata\ 15" $dest
+        $plb -c "Set :New\ Bookmarks:$idx:Non\ Ascii\ Font Inconsolata\ 15" $dest
+    fi
+done
+

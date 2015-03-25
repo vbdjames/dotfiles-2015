@@ -18,4 +18,4 @@ brew_tap 'caskroom/cask'
 brew_install_or_upgrade 'brew-cask'
 export HOMEBREW_CASK_OPTS="--appdir=/Applications" 
 
-
+brew tap caskroom/fonts

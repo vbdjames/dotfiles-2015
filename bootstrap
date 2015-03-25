@@ -59,6 +59,8 @@ source "./scripts/node"
 source "./scripts/scheme"
 source "./scripts/apps"
 source "./scripts/osx"
+source "./scripts/iterm"
+source "./scripts/iterm" # for some reason this has to run twice to go into effect - wtf?
 
 brew linkapps
 
