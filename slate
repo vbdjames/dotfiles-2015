@@ -5,7 +5,7 @@ config windowHintsSpread true
 
 alias mon-laptop  0
 alias mon-main    1
-alias mon-vert    2
+alias mon-aux     2
 alias mon-ipad    3
 
 alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
@@ -13,37 +13,20 @@ alias lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
 alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
 alias tophalf push top bar-resize:screenSizeY/2
 alias bottomhalf push bottom bar-resize:screenSizeY/2
+alias middle move screenOriginX+screenSizeX/6;screenOriginY+screenSizeY/6 2*screenSizeX/3;2*screenSizeY/3
 
 alias 1-full ${full} ${mon-laptop}
 alias 2-full ${full} ${mon-main}
-alias 3-full ${full} ${mon-vert}
-
-
+alias 3-full ${full} ${mon-aux}
 
 bind e:cmd hint ASDFGHJKLQWERTYUIOPCVBN
 
-bind left:ctrl;alt;cmd   ${lefthalf}
-bind right:ctrl;alt;cmd  ${righthalf}
-bind up:ctrl;alt;cmd     ${tophalf}
-bind down:ctrl;alt;cmd   ${bottomhalf}
+bind left:ctrl;alt       ${lefthalf}
+bind right:ctrl;alt      ${righthalf}
+bind up:ctrl;alt         ${tophalf}
+bind down:ctrl;alt       ${bottomhalf}
 bind space:ctrl;alt;cmd  ${full}
+bind space:ctrl;alt      ${middle}
 
-bind left:ctrl;alt       throw left resize
-bind right:ctrl;alt      throw right resize
-
-layout 3monitors 'iTerm':REPEAT              ${3-full}
-layout 3monitors 'MacVim':REPEAT             ${2-full}
-layout 3monitors 'Google Chrome':REPEAT      ${2-full}
-layout 3monitors 'Cornerstone':REPEAT        ${2-full}
-layout 3monitors 'Adium':REPEAT              move screenOriginX+screenSizeX*5/6;screenOriginY screenSizeX/6;screenSizeY ${mon-laptop}
-layout 3monitors 'Microsoft Lync':REPEAT     move screenOriginX+screenSizeX*3/6;screenOriginY screenSizeX*2/6;screenSizeY ${mon-laptop}
-layout 3monitors 'HipChat':REPEAT            move screenOriginX;screenOriginY screenSizeX*5/6;screenSizeY ${mon-laptop}
-layout 3monitors 'Microsoft Outlook'         ${full} ${mon-laptop}
-layout 3monitors 'Mail'                      ${full} ${mon-laptop}
-layout 3monitors 'Safari'                    ${full} ${mon-laptop}
-
-layout 3monitors AFTER                       hide 'Google Chrome','Cornerstone','Microsoft Outlook','Mail','Safari'
-layout 3monitors AFTER                       show 'iTerm','MacVim','Adium','Microsoft Lync'
-
-
-bind 3:ctrl;alt;cmd layout 3monitors
+bind left:ctrl           throw left resize
+bind right:ctrl          throw right resize
