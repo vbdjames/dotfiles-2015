@@ -25,7 +25,7 @@ cask_install font-consolas
 brew_install_or_upgrade macvim --override-system-vim
 vim +PluginInstall +qall
 
-curl -L https://raw.github.com/guille/spot/master/spot.sh -o ~/.bin/spot && chmod +x ~/.bin/spot
+curl -L https://raw.github.com/rauchg/spot/master/spot.sh -o ~/.bin/spot && chmod +x ~/.bin/spot
 
 brew_install_or_upgrade mongodb
 ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
