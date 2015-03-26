@@ -7,6 +7,7 @@ if [[ $(ps aux | grep "[i]Term.app") ]]; then
 fi
 
 $plb -c "Set PromptOnQuit 0" $dest
+$plb -c "Set UseCompactLabel 0" $dest
 
 if [[ $($plb -c "Print Custom\ Color\ Presets:Solarized\ Light" $dest 2>/dev/null) == '' ]]; then
     $plb -c "Merge $SCRIPTPATH/iterm-colors/solarized-light.plist  Custom\ Color\ Presets" $dest
