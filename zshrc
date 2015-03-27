@@ -8,6 +8,7 @@ antigen bundle git
 antigen bundle jsontools
 antigen bundle node
 antigen bundle npm
+antigen bundle nvm
 antigen bundle osx
 antigen bundle pip
 antigen bundle python
