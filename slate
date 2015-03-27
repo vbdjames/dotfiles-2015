@@ -28,5 +28,5 @@ bind down:ctrl;alt       ${bottomhalf}
 bind space:ctrl;alt;cmd  ${full}
 bind space:ctrl;alt      ${middle}
 
-bind left:ctrl           throw left resize
-bind right:ctrl          throw right resize
+bind left:ctrl;alt;cmd   throw left resize
+bind right:ctrl;alt;cmd  throw right resize
