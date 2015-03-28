@@ -12,3 +12,4 @@ cask_install send-to-kindle
 cask_install slack
 cask_install slate
 cask_install spotify
+cask_install ynab
