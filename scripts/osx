@@ -25,7 +25,6 @@ ln -sf ~/.dotfiles/karabiner ~/Library/Application\ Support/Karabiner/private.xm
 defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock no-glass -boolean true
 defaults write com.apple.universalaccess reduceTransparency -bool true
-defaults write com.apple.Finder AppleShowAllFiles -bool true
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 defaults write com.apple.finder ShowStatusBar -bool true
@@ -57,13 +56,11 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 # automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
-
 # save to disk, rather than iCloud, by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 # display admin info when clicking the clock in the login window
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
-
 
 # check for software updates daily, not just once per week
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
@@ -77,19 +74,5 @@ defaults write com.apple.Safari IncludeDebugMenu -bool true
 # open new finder window in home directory
 defaults write com.apple.finder NewWIndowTargetPath -string file:///Users/vbdjames/
 # com.apple.sidebarlists.plist 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 killall Dock
