@@ -7,6 +7,8 @@ brew_install_or_upgrade autojump
 brew_install_or_upgrade ack
 
 brew_install_or_upgrade tmux
+brew_install_or_upgrade reattach-to-user-namespace
+
 
 cask_install virtualbox
 
