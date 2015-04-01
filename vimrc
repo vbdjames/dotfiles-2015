@@ -37,12 +37,17 @@ colorscheme solarized
 set background=dark
 call togglebg#map("<F5>")
 
+set wildignore+=.DS_Store
 hi MatchParen guibg=NONE guifg=NONE gui=underline ctermbg=NONE ctermfg=NONE cterm=underline
+set ignorecase
+set smartcase
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
+
+let g:syntastic_javascript_checkers = ['jscs', 'jshint']
 
 " ctrlp configuration
 " let g:ctrlp_max_files=0
