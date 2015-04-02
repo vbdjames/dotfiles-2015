@@ -64,9 +64,9 @@ source "$SCRIPTPATH/scripts/osx"
 source "$SCRIPTPATH/scripts/iterm"
 source "$SCRIPTPATH/scripts/iterm" # for some reason this has to run twice to go into effect - wtf?
 
+brew cleanup
 brew linkapps
 
 /bin/zsh -c "source ~/.zshrc && antigen update"
 
 cat $SCRIPTPATH/scripts/post-install-msg
-

@@ -51,6 +51,8 @@ let g:UltiSnipsEditSplit="vertical"
 
 let g:syntastic_javascript_checkers = ['jscs', 'jshint']
 
+let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
+
 " ctrlp configuration
 " let g:ctrlp_max_files=0
 
