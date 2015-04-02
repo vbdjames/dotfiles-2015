@@ -20,8 +20,8 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'scrooloose/syntastic'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'Valloric/YourCompleteMe'
-Plugin 'editor/editorconfig-vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()
 
