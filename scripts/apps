@@ -3,6 +3,7 @@ cask_install alfred
 cask_install crashplan
 cask_install dropbox
 cask_install duet
+cask_install evernote
 cask_install google-chrome
 cask_install kindle
 cask_install mailmate
