@@ -1,1 +1,1 @@
-brew_install_or_upgrade python
+brew_install_or_upgrade pyenv

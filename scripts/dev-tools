@@ -24,13 +24,6 @@ cask_install font-source-code-pro
 
 cask_install font-consolas
 
-brew_install_or_upgrade macvim --override-system-vim
-set +e
-vim +PluginInstall +qall
-brew_install_or_upgrade cmake
-~/.vim/bundle/YouCompleteMe/install.sh
-set -e
-
 curl -L https://raw.github.com/rauchg/spot/master/spot.sh -o ~/.bin/spot && chmod +x ~/.bin/spot
 
 brew_install_or_upgrade mongodb
