@@ -9,7 +9,6 @@ brew_install_or_upgrade ack
 brew_install_or_upgrade tmux
 brew_install_or_upgrade reattach-to-user-namespace
 
-
 cask_install virtualbox
 
 cask_install vagrant
@@ -17,6 +16,8 @@ cask_install vagrant
 cask_install vagrant-manager
 
 cask_install iterm2
+
+cask_install intellij-idea-ce
 
 cask_install font-inconsolata
 
