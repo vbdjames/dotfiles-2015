@@ -44,10 +44,10 @@ hi MatchParen guibg=NONE guifg=NONE gui=underline ctermbg=NONE ctermfg=NONE cter
 set ignorecase
 set smartcase
 
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsExpandTrigger="<c-tab>"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" let g:UltiSnipsEditSplit="vertical"
 
 " Syntastic settings
 let g:syntastic_javascript_checkers = ['jscs', 'jshint']

@@ -4,13 +4,16 @@ cask_install crashplan
 cask_install dropbox
 cask_install duet
 cask_install evernote
+cask_install fantastical
 cask_install google-chrome
 cask_install kindle
 cask_install mailmate
 cask_install nvalt
+cask_install postbox
 cask_install robomongo
 cask_install send-to-kindle
 cask_install slack
 cask_install slate
 cask_install spotify
+cask_install todoist
 cask_install ynab

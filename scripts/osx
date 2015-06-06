@@ -13,14 +13,14 @@ defaults -currentHost write -g com.apple.keyboard.modifiermapping.1241-8211-0  -
 defaults -currentHost write -g com.apple.keyboard.modifiermapping.1452-601-0  -array \
     '<dict><key>HIDKeyboardModifierMappingDst</key><integer>-1</integer><key>HIDKeyboardModifierMappingSrc</key><integer>0</integer></dict>' \
 
-cask_install seil
-/Applications/Seil.app/Contents/Library/bin/seil set keycode_capslock 80
-/Applications/Seil.app/Contents/Library/bin/seil set enable_capslock 1
+# cask_install seil
+# /Applications/Seil.app/Contents/Library/bin/seil set keycode_capslock 80
+# /Applications/Seil.app/Contents/Library/bin/seil set enable_capslock 1
 
-cask_install karabiner
-ln -sf ~/.dotfiles/karabiner ~/Library/Application\ Support/Karabiner/private.xml
-/Applications/Karabiner.app/Contents/Library/bin/karabiner reloadxml
-/Applications/Karabiner.app/Contents/Library/bin/karabiner enable private.f192f19_escape
+# cask_install karabiner
+# ln -sf ~/.dotfiles/karabiner ~/Library/Application\ Support/Karabiner/private.xml
+# /Applications/Karabiner.app/Contents/Library/bin/karabiner reloadxml
+# /Applications/Karabiner.app/Contents/Library/bin/karabiner enable private.f192f19_escape
 
 defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock no-glass -boolean true

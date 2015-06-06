@@ -1,5 +1,7 @@
 brew_install_or_upgrade git
 
+brew_install_or_upgrade md5sha1sum
+
 brew_install_or_upgrade the_silver_searcher
 
 brew_install_or_upgrade autojump
@@ -8,6 +10,8 @@ brew_install_or_upgrade ack
 
 brew_install_or_upgrade tmux
 brew_install_or_upgrade reattach-to-user-namespace
+
+brew_install_or_upgrade rlwrap
 
 cask_install virtualbox
 
