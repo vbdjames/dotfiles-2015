@@ -1,3 +1,0 @@
-cask_install xquartz
-brew_tap homebrew/x11
-brew_install_or_upgrade mit-scheme
