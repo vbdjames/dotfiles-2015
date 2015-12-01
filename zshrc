@@ -23,5 +23,12 @@ antigen bundle sindresorhus/pure
 
 antigen apply
 
+unalias rm
+
 export PATH="$HOME/.bin:$PATH"
 eval "$(rbenv init - zsh --no-rehash)"
+export PATH="/usr/local/bin:$PATH"
+
+source '/usr/local/share/chruby/chruby.sh'
+
+source '/usr/local/share/chruby/auto.sh'
