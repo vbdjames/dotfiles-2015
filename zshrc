@@ -24,6 +24,7 @@ antigen bundle sindresorhus/pure
 antigen apply
 
 unalias rm
+alias mutt 'cd ~/Desktop && mutt'
 
 export PATH="$HOME/.bin:$PATH"
 eval "$(rbenv init - zsh --no-rehash)"
