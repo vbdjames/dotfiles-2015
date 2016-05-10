@@ -1,3 +1,7 @@
 [user]
-	name = Doug James
-	email = vbdjames@gmail.com
+	name = 
+	email = 
+[push]
+	default = simple
+[core]
+	excludesfile = /Users/djames/.gitignore_global

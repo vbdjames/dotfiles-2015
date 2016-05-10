@@ -1,5 +1,5 @@
 [general]
-ui=TTY.TTYUI
+ui=basic
 accounts=DougJames
 pythonfile=~/.mutt/offlineimap.py
 fsync = False

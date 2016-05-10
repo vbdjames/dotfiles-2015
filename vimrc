@@ -22,6 +22,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'cwoac/nvim'
 
 call vundle#end()
 
@@ -34,6 +35,8 @@ set softtabstop=4
 set relativenumber
 set number
 set guifont=Source\ Code\ Pro:h15
+
+" autocmd Filetype html setlocal ts=2 sts=2 sw=2
 
 colorscheme solarized
 set background=dark
