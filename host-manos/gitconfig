@@ -1,7 +1,0 @@
-[user]
-	name = 
-	email = 
-[push]
-	default = simple
-[core]
-	excludesfile = /Users/djames/.gitignore_global
