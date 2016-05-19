@@ -1,1 +1,3 @@
 EXCLUDES="README.md scripts bootstrap iterm-colors"
+UNDOTTED="bin lib"
+SYMLINK_DIRS="bin lib"
