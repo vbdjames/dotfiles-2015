@@ -19,14 +19,14 @@ alias 1-full ${full} ${mon-laptop}
 alias 2-full ${full} ${mon-main}
 alias 3-full ${full} ${mon-aux}
 
-bind e:cmd hint ASDFGHJKLQWERTYUIOPCVBN
+# bind e:cmd hint ASDFGHJKLQWERTYUIOPCVBN
 
-bind left:ctrl;alt       ${lefthalf}
-bind right:ctrl;alt      ${righthalf}
-bind up:ctrl;alt         ${tophalf}
-bind down:ctrl;alt       ${bottomhalf}
-bind space:ctrl;alt;cmd  ${full}
-bind space:ctrl;alt      ${middle}
+# bind left:ctrl;alt       ${lefthalf}
+# bind right:ctrl;alt      ${righthalf}
+## bind up:ctrl;alt         ${tophalf}
+## bind down:ctrl;alt       ${bottomhalf}
+# bind space:ctrl;alt;cmd  ${full}
+# bind space:ctrl;alt      ${middle}
 
-bind left:ctrl;alt;cmd   throw left resize
-bind right:ctrl;alt;cmd  throw right resize
+# bind left:ctrl;alt;cmd   throw left resize
+# bind right:ctrl;alt;cmd  throw right resize
