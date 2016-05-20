@@ -22,7 +22,6 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'cwoac/nvim'
 
 call vundle#end()
 
