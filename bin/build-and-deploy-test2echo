@@ -1,0 +1,24 @@
+#!/bin/bash
+
+say "building"
+ant all
+returnCode=$?
+if [ $returnCode -ne 0 ]
+then
+    say "build failed"
+    exit $returnCode
+fi
+say "build complete"
+
+sleep 5
+
+say "deploying"
+deploy-test2echo
+returnCode=$?
+if [ $returnCode -ne 0 ]
+then
+    say "deployment failed"
+    exit $returnCode
+fi
+say "deployment complete"
+
